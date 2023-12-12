@@ -20,6 +20,7 @@ section {
 }
 article {
     background-color: #7AC141;
+    margin-top: 1rem;
 }
 aside {
     background-color: blue;
@@ -34,9 +35,25 @@ footer {
 .parent {
     display: flex; /* otetaan flex käyttön lapsissa   */
     flex-direction: row; /* flexataan lapset rivin suuntaisesti  */
-    flex-wrap: nowrap; /* rivi ei voi vaihtua lapsille  */
+    flex-wrap: wrap; /* rivi ei voi vaihtua lapsille  */
 } /*vanhemmat säännöt (main) */
 .parent > * {
     flex-grow: 1; /* lapset yhtä leveitä */
-    flex-basis: 0; /* lapsien minimileveys  */
+    flex-basis: 100%; /* lapsien minimileveys  */
 } /*lasten säännöt (section and aside) */ 
+
+/* Tablet-näkymän säännöt */
+@media only screen and (min-width: 426px) {
+    .parent {
+        display: flex; /* otetaan flex käyttön lapsissa   */
+        flex-direction: row; /* flexataan lapset rivin suuntaisesti  */
+        flex-wrap: nowrap; /* rivi ei voi vaihtua lapsille  */
+    }
+    .parent > * {
+        flex-grow: 1; /* lapset yhtä leveitä */
+        flex-basis: 0; /* lapsien minimileveys  */
+    } /*lasten säännöt (section and aside) */ 
+    
+  }
+
+ 
